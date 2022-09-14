@@ -1,0 +1,74 @@
+body{
+    background: pink;
+}
+
+/* NAV */
+.nav-link{
+    font-size: 1.25rem;
+    color: pink;
+}
+
+.nav-link:hover{
+    background: pink;
+    color: #dc3545;
+}
+
+.navbar-toggler{
+    background: pink;
+}
+
+.dropdown-menu{
+    background: #dc3545;
+}
+
+.dropdown-item{
+     color: pink;
+}
+
+.dropdown-item:hover{
+    background: pink;
+    color: #dc3545;
+}
+
+/* HOME */
+h2{
+    color: pink;
+}
+
+.article-titre{
+    font-size: 1.5rem;
+    color: pink;
+}
+
+.article-titre:hover{
+    background: pink;
+    color: #dc3545;
+}
+
+.card-title{
+    color: pink;
+}
+
+.btn-transparent{
+    background: pink;
+    color: #dc3545;
+}
+
+.btn-transparent:hover{
+    background: deeppink;
+    color: pink;
+}
+
+/* FOOTER */
+.fa-brands{
+    color: pink;
+    font-size: 1.75rem;
+}
+
+.fa-brands:hover{
+    color: deeppink;
+}
+
+footer{
+    color: pink;
+}

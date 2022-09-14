@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg bg-danger p-4">
+  <div class="container-fluid">
+
+    {# <a class="navbar-brand" href="#">Navbar</a> #}
+
+    <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{path('app_home')}}"><i class="fa-solid fa-house"></i></a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{{path('app_all_article')}}">Tous les articles</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Histoire
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{path('app_article_histoire_naturelle')}}">Histoire naturelle</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_histoire_antiquite')}}">Antiquité</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_histoire_moyen')}}">Moyen-Âge</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_xvi_xviii')}}">XVIe - XVIIIe siècle</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_xix_xx')}}">XIXe - XXe siècle</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Science
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{path('app_article_science_espace')}}">Espace</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_science_sante')}}">Santé</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_science_tech')}}">Technologie</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_science_vivant')}}">Vivant</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Société
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{path('app_article_societe_alimentation')}}">Alimentation</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_societe_folklore')}}">Folklore</a></li>
+            <li><a class="dropdown-item" href="{{path('app_article_societe_population')}}">Population</a></li>
+          </ul>
+        </li>
+
+        {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{{path('app_admin_categorie_ajout')}}">Ajouter une categorie</a></li>
+              <li><a class="dropdown-item" href="{{path('app_admin_article_ajout')}}">Ajouter un article</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Gestion des catégories</a></li>
+              <li><a class="dropdown-item" href="{{path('app_admin_all_articles')}}">Gestion des articles</a></li>
+              <li><a class="dropdown-item" href="{{path('app_logout')}}">Déconnexion</a></li>
+            </ul>
+          </li>
+        {% endif %}
+      </ul>
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Rechercher un article" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

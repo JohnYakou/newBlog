@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les articles | XVI - XVIIIème siècle{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <br><br>
+        <div class="row d-flex justify-content-evenly">
+            {% for article in article %}
+                {% if article.categorie == "XVI - XVIII" %}
+                    <div class="card m-4 bg-danger" style="width: 22.5rem;">
+                        {% if article.image == null %}
+                            <img src="{{asset('image/noImage.jpg')}}" class="card-img-top mt-2" alt="Pas d'image" style="height:15rem">
+                        {% else %}
+                            <img src="{{asset('uploads/image/' ~ article.image)}}" class="card-img-top mt-2" alt="Pas d'image" style="height:15rem">
+                        {% endif %}
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center m-2">{{ article.titre }}</h5>
+                            {# <p class="card-text">{{article.createdAt}}</p> #}
+                            
+                            <div class="d-flex justify-content-around">
+                                <a href="{{path('app_single_article', {id:article.id})}}" class="btn btn-transparent m-4" target="_blank">Lire l'article</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <br>
+
+    <div class="container">
+        
+        <br>
+
+        <h1 class="text-center text-danger">Accueil<h1>
+
+        <br>
+        
+        <div class="row">
+            <div class="col-md-9">
+                {# CAROUSEL BT #}
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img
+                                src="{{asset('image/green.jpg')}}"
+                                class="d-block w-100"
+                                alt="Paysage vert"
+                                style="height: 45rem"
+                            />
+                        </div>
+
+                        <div class="carousel-item">
+                            <img
+                                src="{{asset('image/blue.jpg')}}"
+                                class="d-block w-100"
+                                alt="Paysage bleu"
+                                style="height: 45rem"
+                            />
+                        </div>
+
+                        <div class="carousel-item">
+                            <img
+                                src="{{asset('image/orange.jpg')}}"
+                                class="d-block w-100"
+                                alt="Paysage orange"
+                                style="height: 45rem"
+                            />
+                        </div>
+
+                        <div class="carousel-item">
+                            <img
+                                src="{{asset('image/yellow.jpg')}}"
+                                class="d-block w-100"
+                                alt="Paysage jaune"
+                                style="height: 45rem"
+                            />
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                {# CAROUSEL BT #}
+            </div>
+
+            {# ON N'AFFICHE LES ARTICLES #}
+            <div class="col-md-3 card py-3 bg-danger" style="height:75rem">
+                <h2 class="text-center mt-2">Derniers articles</h2>
+
+                {% for article in article %}
+                    {# <p class="text-center m-4 article-titre">{{article.titre}}</p> #}
+
+                    <a type="button" class="text-center m-3 article-titre" target="_blank" href="{{path('app_single_article', {id:article.id})}}">{{article.titre}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <br>
+{% endblock %}
